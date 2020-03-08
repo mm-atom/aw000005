@@ -2,14 +2,7 @@ import aw1 from '@mmstudio/aw000001';
 import on from '@mmstudio/on';
 import * as dot from 'dot';
 
-enum Position {
-	After = 'after',
-	Before = 'before',
-	FirstIn = 'firstin',
-	LastIn = 'lastin',
-	Replace = 'replace',
-	Inner = 'inner'
-}
+type Position = 'after' | 'before' | 'firstin' | 'lastin' | 'replace' | 'inner';
 
 export default function render(mm: aw1, data: unknown, tpl: string, panme: string, position: Position) {
 	const dom_node = mm.data.node;
@@ -151,26 +144,26 @@ function fromString(html: string): DocumentFragment {
 function place(node: Node, position: Position, relativeElement: Element): void {
 	let parent: Node | null;
 
-	if (position === Position.After || position === Position.Before || position === Position.Replace) {
+	if (position === 'after' || position === 'before' || position === 'replace') {
 		parent = relativeElement.parentNode;
 		if (!parent) {
 			throw new ReferenceError('dom.place: Reference node must have a parent to determine placement');
 		}
 
-		if (position === Position.After) {
+		if (position === 'after') {
 			if (parent.lastChild === relativeElement) {
 				parent.appendChild(node);
 			} else {
 				parent.insertBefore(node, relativeElement.nextSibling);
 			}
-		} else if (position === Position.Before) {
+		} else if (position === 'before') {
 			parent.insertBefore(node, relativeElement);
-		} else if (position === Position.Replace) {
+		} else if (position === 'replace') {
 			parent.replaceChild(node, relativeElement);
 		}
-	} else if (position === Position.FirstIn) {
+	} else if (position === 'firstin') {
 		relativeElement.insertBefore(node, relativeElement.firstChild);
-	} else if (position === Position.Inner) {
+	} else if (position === 'inner') {
 		relativeElement.innerHTML = '';
 		relativeElement.appendChild(node);
 	} else {
