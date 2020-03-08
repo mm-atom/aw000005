@@ -38,8 +38,17 @@
 		}
 	],
 	"license": "MIT",
-	"dependencies": {},
+	"dependencies": {
+		"dot": "1.1.3"
+	},
+	"peerDependencies": {
+		"@mmstudio/aw000001": "*",
+		"@mmstudio/on": "*"
+	},
 	"devDependencies": {
+		"@mmstudio/aw000001": "latest",
+		"@mmstudio/on": "latest",
+		"@types/dot": "latest",
 		"@typescript-eslint/eslint-plugin": "latest",
 		"@typescript-eslint/parser": "latest",
 		"chai": "latest",
