@@ -1,6 +1,6 @@
 	// html渲染
 	(() => {
 		const data = $2;	// 要渲染的数据
-		const position = ${3|inner,after,before,firstin,lastin,replace|};	// inner 替换全部子结点 after 当前结点之后 before 当前结点之前 firstin 第一个子结点之前 lastin 最后一个子结点之后
+		const position = '${3|inner,after,before,firstin,lastin,replace|}';	// inner 替换全部子结点 after 当前结点之后 before 当前结点之前 firstin 第一个子结点之前 lastin 最后一个子结点之后
 		return aw5(mm, data, p$1, 'p$1', position);
 	})();
