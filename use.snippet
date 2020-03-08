@@ -1,9 +1,6 @@
 	// html渲染
-	const r$CURRENT_SECONDS_UNIX = await(() => {
-		const param1 = $1;	// todo add param description
-		const param2 = $2;	// todo add param description
-		const param3 = $3;	// todo add param description
-		const param4 = $4;	// todo add param description
-		const param5 = $5;	// todo add param description
-		return aw5(param1, param2, param3, param4, param5)
+	(() => {
+		const data = $2;	// 要渲染的数据
+		const position = ${3|inner,after,before,firstin,lastin,replace|};	// inner 替换全部子结点 after 当前结点之后 before 当前结点之前 firstin 第一个子结点之前 lastin 最后一个子结点之后
+		return aw5(mm, data, p$1, 'p$1', position);
 	})();
