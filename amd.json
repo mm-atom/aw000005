@@ -3,5 +3,10 @@
 		"name": "@mmstudio/aw000005",
 		"location": "@mmstudio/aw000005/dist",
 		"main": "main"
+	},
+	{
+		"name": "he",
+		"location": "he",
+		"main": "he"
 	}
 ]
