@@ -10,13 +10,17 @@
 		"compile-amd": "tsc -m amd -d false --outFile ./dist/main.js",
 		"compile-cjs": "tsc",
 		"compile": "npm run compile-cjs && npm run compile-amd",
-		"build": "npm run lint && npm run compile"
+		"build": "npm run lint && npm run compile",
+		"up": "git pull git@github.com:mm-tpl/atom-web.git master"
 	},
 	"repository": {
-		"type": "git",
-		"url": "https://github.com/mm-atom/aw000005"
+		"type": "https+git",
+		"url": "https://github.com/mm-atom/aw000005.git"
 	},
+	"homepage": "https://mm-works.github.io",
 	"main": "dist/index.js",
+	"module": "dist/index.js",
+	"types": "dist/index.d.ts",
 	"keywords": [
 		"mm",
 		"mmstudio",
